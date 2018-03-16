@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"gopkg.in/src-d/go-git.v4"
 )
@@ -32,4 +33,5 @@ func main() {
 	fmt.Printf("by: %s\n", lastCommit.Author.Email)
 	fmt.Printf("branch: %s\n", head.Name().Short())
 	fmt.Printf("commit: %s\n", lastCommit.Hash)
+	fmt.Printf("commit-time: %s\n", lastCommit.Author.When.Format(time.RFC3339))
 }
